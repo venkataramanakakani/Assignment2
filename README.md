@@ -1,51 +1,12 @@
-# Assignment2
-STM_Assignment
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+Cyclomatic Complexity:
+Cyclomatic Complexity is defined as the number of linearly independent paths through a program's source code. CC is also defined as the number of test cases to be covered.
+CC is calculated with formula E-N+2(P) where
+E= the number of edges of the graph
+N=the number of nodes of the graph
+P= the number of connected components (exit nodes)
 
-namespace Assignment_STM
-{
-class Program
-{
-    static void Main(String[] args)
-    {
-        string uInput = "";
-        bool menuItem = false;
-        while (menuItem == false)
-        {
-            Console.WriteLine("1=Enter Triangle dimensions");
-            Console.WriteLine("2 = Exit \n");
-            Console.WriteLine("Choose the option above to continue:");
-            uInput = Console.ReadLine();
-            if (uInput != "1" && uInput != "2")
-            {
-                Console.WriteLine("You have choosen wrong option, please try  again:");
-            }
-            else if (uInput == "1")
-            {
-                Console.WriteLine("Enter all the sides of traingle:");
-                Console.WriteLine("Enter First side:");
-                int x = int.Parse(Console.ReadLine());
+From our CFG we can calculate CC as:
+E=12; N=10; P=1
+Cyclomatic Complexity = 12-10+2(1) = 2+2 = 4
+We can write 4 Test cases for the present program for good coverage.
 
-                Console.WriteLine("Enter Second side:");
-                int y = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Enter Third side:");
-                int z = int.Parse(Console.ReadLine());
-
-                string empty = string.Empty;
-                empty = TriangleSolver.Analyze(x, y, z);
-                Console.WriteLine("{0}", empty);
-            }
-            else
-            {
-                menuItem = true;
-                break;
-            }
-        }
-    }
-}
-}
